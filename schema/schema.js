@@ -48,6 +48,7 @@ const RootQuery = new GraphQLObjectType({
   fields: {
     user: {
       type: UserType,
+      description: 'Fetch single user',
       args: { id: { type: GraphQLString } },
       resolve(_, args) {
         return axios
@@ -57,6 +58,7 @@ const RootQuery = new GraphQLObjectType({
     },
     company: {
       type: CompanyType,
+      description: 'Fetch single company',
       args: { id: { type: GraphQLString } },
       resolve(_, args) {
         return axios
@@ -72,6 +74,7 @@ const mutation = new GraphQLObjectType({
   fields: {
     addUser: {
       type: UserType,
+      description: 'Add new user',
       args: {
         firstName: { type: new GraphQLNonNull(GraphQLString) },
         age: { type: new GraphQLNonNull(GraphQLInt) },
@@ -88,6 +91,7 @@ const mutation = new GraphQLObjectType({
     },
     deleteUser: {
       type: UserType,
+      description: 'Delete user',
       args: {
         id: { type: new GraphQLNonNull(GraphQLString) }
       },
@@ -99,18 +103,17 @@ const mutation = new GraphQLObjectType({
     },
     editUser: {
       type: UserType,
+      description: 'Update user info',
       args: {
-        args: {
-          id: { type: new GraphQLNonNull(GraphQLString) },
-          firstName: { type: new GraphQLNonNull(GraphQLString) },
-          age: { type: new GraphQLNonNull(GraphQLInt) },
-          companyId: { type: GraphQLString }
-        },
-        resolve(_, args) {
-          return axios
-            .patch(`http://localhost:3000/users/${id}`, args)
-            .then(response => response.data);
-        }
+        id: { type: new GraphQLNonNull(GraphQLString) },
+        firstName: { type: new GraphQLNonNull(GraphQLString) },
+        age: { type: new GraphQLNonNull(GraphQLInt) },
+        companyId: { type: GraphQLString }
+      },
+      resolve(_, args) {
+        return axios
+          .patch(`http://localhost:3000/users/${id}`, args)
+          .then(response => response.data);
       }
     }
   }
