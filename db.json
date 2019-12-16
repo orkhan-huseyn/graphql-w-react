@@ -1,11 +1,30 @@
 {
   "users": [
-    { "id": "23", "firstName": "Bill", "age": 20, "companyId": "1" },
-    { "id": "40", "firstName": "Alex", "age": 40, "companyId": "2" },
-    { "id": "41", "firstName": "Stephen", "age": 35, "companyId": "2" }
+    {
+      "id": "23",
+      "firstName": "Bill",
+      "age": 20,
+      "companyId": "1"
+    },
+    {
+      "id": "40",
+      "firstName": "Alex",
+      "age": 40,
+      "companyId": "2"
+    },
+    {
+      "id": "41",
+      "firstName": "Stephen",
+      "age": 35,
+      "companyId": "2"
+    }
   ],
   "companies": [
-    { "id": "1", "name": "Nokia", "description": "Connecting people" },
+    {
+      "id": "1",
+      "name": "Nokia",
+      "description": "Connecting people"
+    },
     {
       "id": "2",
       "name": "Google",
